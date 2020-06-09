@@ -6,7 +6,7 @@ const routes = [
   {
     "path": "/",
     "component": (props) => require('react').createElement(require('/Users/liuzhao8/workspace/mypro/lui/node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
-      ...{"menus":{"*":{"*":[{"path":"/","title":"组件","meta":{}},{"title":"Button","path":"/button","meta":{},"children":[{"path":"/button","title":"Button 按钮","meta":{}}]}]}},"locales":[],"navs":{},"title":"lui","mode":"doc"},
+      ...{"menus":{"*":{"*":[{"path":"/","title":"组件","meta":{}},{"title":"Button","path":"/button","meta":{},"children":[{"path":"/button","title":"Button 按钮","meta":{}}]},{"title":"Icon","path":"/icon","meta":{},"children":[{"path":"/icon","title":"Icon 图标","meta":{}}]}]}},"locales":[],"navs":{},"title":"lui","mode":"doc"},
       ...props,
     }),
     "routes": [
@@ -16,7 +16,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/index.md",
-          "updatedTime": 1591688438375,
+          "updatedTime": 1591699713000,
           "slugs": [],
           "title": "Index"
         },
@@ -28,7 +28,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/Button/index.md",
-          "updatedTime": 1591689197241,
+          "updatedTime": 1591699713000,
           "slugs": [
             {
               "depth": 3,
@@ -65,12 +65,39 @@ const routes = [
         "title": "Button 按钮"
       },
       {
+        "path": "/icon",
+        "component": require('/Users/liuzhao8/workspace/mypro/lui/src/Icon/index.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "src/Icon/index.md",
+          "updatedTime": 1591700535859,
+          "slugs": [
+            {
+              "depth": 3,
+              "value": "Icon 图标",
+              "heading": "icon-图标"
+            },
+            {
+              "depth": 3,
+              "value": "使用方法",
+              "heading": "使用方法"
+            }
+          ],
+          "title": "Icon 图标",
+          "group": {
+            "path": "/icon",
+            "title": "Icon"
+          }
+        },
+        "title": "Icon 图标"
+      },
+      {
         "path": "/",
         "component": require('/Users/liuzhao8/workspace/mypro/lui/docs/index.md').default,
         "exact": true,
         "meta": {
           "filePath": "docs/index.md",
-          "updatedTime": 1591688298857,
+          "updatedTime": 1591699713000,
           "slugs": [
             {
               "depth": 2,
