@@ -19,7 +19,7 @@ const getClientRender = (args: { hot?: boolean } = {}) => plugin.applyPlugins({
       plugin,
       history: createHistory(args.hot),
       rootElement: 'root',
-      defaultTitle: ``,
+      defaultTitle: `LUI`,
     });
   },
   args,

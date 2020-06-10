@@ -6,7 +6,7 @@ const routes = [
   {
     "path": "/",
     "component": (props) => require('react').createElement(require('/Users/liuzhao8/workspace/mypro/lui/node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
-      ...{"menus":{"*":{"*":[{"path":"/","title":"组件","meta":{}},{"title":"Button","path":"/button","meta":{},"children":[{"path":"/button","title":"Button 按钮","meta":{}}]},{"title":"Icon","path":"/icon","meta":{},"children":[{"path":"/icon","title":"Icon 图标","meta":{}}]}]}},"locales":[],"navs":{},"title":"lui","mode":"doc"},
+      ...{"menus":{"*":{"*":[{"path":"/","title":"组件","meta":{}},{"title":"Button","path":"/button","meta":{},"children":[{"path":"/button","title":"Button 按钮","meta":{}}]},{"title":"Icon","path":"/icon","meta":{},"children":[{"path":"/icon","title":"Icon 图标","meta":{}}]}]}},"locales":[],"navs":{},"title":"LUI","mode":"doc"},
       ...props,
     }),
     "routes": [
@@ -70,7 +70,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/Icon/index.md",
-          "updatedTime": 1591700535859,
+          "updatedTime": 1591700650000,
           "slugs": [
             {
               "depth": 3,
@@ -110,7 +110,7 @@ const routes = [
         "title": "组件"
       }
     ],
-    "title": "lui"
+    "title": "LUI"
   }
 ];
 
