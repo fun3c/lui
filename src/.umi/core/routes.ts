@@ -54,6 +54,36 @@ const routes = [
               "depth": 3,
               "value": "点击效果",
               "heading": "点击效果"
+            },
+            {
+              "depth": 3,
+              "value": "图标按钮",
+              "heading": "图标按钮"
+            },
+            {
+              "depth": 3,
+              "value": "圆形按钮",
+              "heading": "圆形按钮"
+            },
+            {
+              "depth": 3,
+              "value": "加载中状态",
+              "heading": "加载中状态"
+            },
+            {
+              "depth": 3,
+              "value": "Block 按钮",
+              "heading": "block-按钮"
+            },
+            {
+              "depth": 3,
+              "value": "按钮组合",
+              "heading": "按钮组合"
+            },
+            {
+              "depth": 3,
+              "value": "API",
+              "heading": "api"
             }
           ],
           "title": "Button 按钮",
@@ -70,7 +100,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/Icon/index.md",
-          "updatedTime": 1591767458000,
+          "updatedTime": 1591769767000,
           "slugs": [
             {
               "depth": 3,

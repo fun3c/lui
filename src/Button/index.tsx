@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ButtonProps } from './interface'
 import classnames from 'classnames'
+import Icon from '../Icon';
 import utils from '@/utils'
 import './style/index.less'
 
@@ -18,6 +19,8 @@ const Button = (props: ButtonProps) => {
     intent,
     icon,
     size,
+    block = false,
+    circular = false,
     loading = false,
     disabled = false,
     animate = false,
@@ -33,7 +36,9 @@ const Button = (props: ButtonProps) => {
       [`${prefixCls}-${size}`]: size,
       [`${prefixCls}__${intent}`]: intent,
       [`${prefixCls}-${appearance}`]: appearance,
+      [`${prefixCls}-circular`]: circular,
       [`${prefixCls}-anim`]: animate,
+      [`${prefixCls}-block`]: block,
     },
     className,
   );
@@ -65,6 +70,8 @@ const Button = (props: ButtonProps) => {
     isRepple && (
       <span className={rippleCls} style={rippleStyle}></span>
     );
+  const iconType = loading ? 'loading' : icon;
+  const iconNode = iconType ? <Icon name={iconType} /> : null;
 
   return (
     <button
@@ -74,7 +81,8 @@ const Button = (props: ButtonProps) => {
       onClick={handleClick}
       {...ohter}
     >
-      <span>{children}</span>
+      {iconNode}
+      {children && <span>{children}</span>}
       {animate && <span className="animate">{repple()}</span>}
     </button>
   );

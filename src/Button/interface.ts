@@ -5,6 +5,8 @@ export interface ButtonProps extends React.Props<ButtonProps> {
   size?: string;
   icon?: string;
   intent?: string;
+  block?: boolean;
+  circular?: boolean;
   loading?: boolean;
   disabled?: boolean;
   animate?: boolean;

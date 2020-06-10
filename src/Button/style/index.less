@@ -89,6 +89,17 @@
             vertical-align: 0;
         }
     }
+
+    &-circular {
+        .button-circular(@btn-prefix);
+        .animate {
+            left: -6px;
+        }
+    }
+    &-block {
+        width  : 100%;
+        display: block;
+    }
     &-anim {
         overflow: hidden;
 
@@ -112,6 +123,23 @@
             transform        : scale(0);
             opacity          : 0.5;
         }
+    }
+    
+    &-group {
+        .button-group(@btn-prefix);
+
+        &-vertical {
+            .button-vertical(@btn-prefix);
+        }
+
+        &-full {
+            .button-full(@btn-prefix);
+        }
+    }
+
+    .lui-icon-loading,
+    .lui-icon-reload {
+        vertical-align: 0.134px;
     }
 }
 

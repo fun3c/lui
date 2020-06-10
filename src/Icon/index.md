@@ -38,7 +38,7 @@ export default () => <>
 ```tsx
 import React from 'react';
 import { Icon } from 'lui';
-import '../demo/icon/index.less';
+
 
 export default () => <>
     <Icon name="real-heart" fill="red" />
@@ -52,6 +52,7 @@ export default () => <>
 ```jsx | inline
 import React from 'react';
 import { Icon } from 'lui';
+import '../demo/icon/index.less';
 
 const icons = [
   {
