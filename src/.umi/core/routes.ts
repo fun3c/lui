@@ -70,7 +70,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/Icon/index.md",
-          "updatedTime": 1591700650000,
+          "updatedTime": 1591767458000,
           "slugs": [
             {
               "depth": 3,
@@ -81,6 +81,26 @@ const routes = [
               "depth": 3,
               "value": "使用方法",
               "heading": "使用方法"
+            },
+            {
+              "depth": 3,
+              "value": "Loading",
+              "heading": "loading"
+            },
+            {
+              "depth": 3,
+              "value": "填充颜色",
+              "heading": "填充颜色"
+            },
+            {
+              "depth": 3,
+              "value": "图标列表",
+              "heading": "图标列表"
+            },
+            {
+              "depth": 3,
+              "value": "API",
+              "heading": "api"
             }
           ],
           "title": "Icon 图标",
