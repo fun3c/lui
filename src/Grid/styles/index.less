@@ -1,0 +1,59 @@
+@import '../../styles/themes/default';
+@import './mixin';
+
+@row-prefix: ~'lui-row';
+@col-prefix: ~'lui-col';
+
+.row-base() {
+  display: flex;
+  flex-flow: row wrap;
+
+  &::before,
+  &::after {
+    display: flex;
+  }
+}
+
+.@{row-prefix} {
+  .row-base();
+  // x轴原点
+  &-justify-start {
+    justify-content: flex-start;
+  }
+  // x轴居中
+  &-justify-center {
+    justify-content: center;
+  }
+  // x轴反方向
+  &-justify-end {
+    justify-content: flex-end;
+  }
+  // x轴平分
+  &-justify-space-between {
+    justify-content: space-between;
+  }
+  // x轴有间隔地平分
+  &-justify-space-around {
+    justify-content: space-around;
+  }
+  // 顶部对齐
+  &-align-start {
+    align-items: flex-start;
+  }
+
+  // 居中对齐
+  &-align-center {
+    align-items: center;
+  }
+
+  // 底部对齐
+  &-align-end {
+    align-items: flex-end;
+  }
+}
+
+.@{col-prefix} {
+  flex: 0 0 auto;
+}
+
+.make-grid(@col-prefix);

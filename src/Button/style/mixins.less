@@ -34,12 +34,12 @@
   fieldset[disabled] {
     cursor: not-allowed;
     opacity: @default-opacity;
-    
+
     &:hover,
     &:focus,
     &.focus {
       background: @background;
-      border-color:  @border;
+      border-color: @border;
     }
   }
 }
@@ -73,7 +73,7 @@
   color: @color;
   background-color: @background;
   border-color: @border;
-  
+
   &:focus,
   &.focus {
     background-color: darken(@background, 5%);
@@ -124,11 +124,11 @@
 .button-group(@btnClassName) {
   display: inline-block;
   .@{btnClassName},
-  > .@{btnClassName}  {
+  > .@{btnClassName} {
     display: inline-block;
     position: relative;
     margin-left: -1px;
- 
+
     &:first-child {
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
@@ -147,10 +147,10 @@
       padding: 0 @btn-group-default;
     }
     &-medium {
-      padding: 0  @btn-group-medium;
+      padding: 0 @btn-group-medium;
     }
     &-large {
-        padding: 0 @btn-group-large;
+      padding: 0 @btn-group-large;
     }
   }
 }
@@ -178,7 +178,7 @@
       border-top: 0;
     }
     > i {
-      +span {
+      + span {
         width: 80%;
         text-align: left;
         margin-left: 10px;
@@ -202,10 +202,10 @@
       padding: 2px @btn-group-default;
     }
     &-medium {
-      padding: 4px  @btn-group-medium;
+      padding: 4px @btn-group-medium;
     }
     &-large {
-        padding: 6px @btn-group-large;
+      padding: 6px @btn-group-large;
     }
   }
 }
@@ -214,7 +214,7 @@
 .button-circular(@btnClassName) {
   border-radius: 50%;
   &.@{btnClassName},
-  &> .@{btnClassName}  {
+  & > .@{btnClassName} {
     &-small {
       padding: 0 @small-radius !important;
     }

@@ -6,7 +6,7 @@ const routes = [
   {
     "path": "/",
     "component": (props) => require('react').createElement(require('/Users/liuzhao8/workspace/mypro/lui/node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
-      ...{"menus":{"*":{"*":[{"path":"/","title":"组件","meta":{}},{"title":"Button","path":"/button","meta":{},"children":[{"path":"/button","title":"Button 按钮","meta":{}}]},{"title":"Icon","path":"/icon","meta":{},"children":[{"path":"/icon","title":"Icon 图标","meta":{}}]}]}},"locales":[],"navs":{},"title":"LUI","mode":"doc"},
+      ...{"menus":{"*":{"*":[{"path":"/","title":"组件","meta":{}},{"title":"Button","path":"/button","meta":{},"children":[{"path":"/button","title":"Button 按钮","meta":{}}]},{"title":"Grid","path":"/grid","meta":{},"children":[{"path":"/grid","title":"Grid 栅格","meta":{}}]},{"title":"Icon","path":"/icon","meta":{},"children":[{"path":"/icon","title":"Icon 图标","meta":{}}]}]}},"locales":[],"navs":{},"title":"LUI","mode":"doc"},
       ...props,
     }),
     "routes": [
@@ -28,7 +28,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/Button/index.md",
-          "updatedTime": 1591699713000,
+          "updatedTime": 1591777567000,
           "slugs": [
             {
               "depth": 3,
@@ -95,12 +95,79 @@ const routes = [
         "title": "Button 按钮"
       },
       {
+        "path": "/grid",
+        "component": require('/Users/liuzhao8/workspace/mypro/lui/src/Grid/index.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "src/Grid/index.md",
+          "updatedTime": 1591863593644,
+          "slugs": [
+            {
+              "depth": 3,
+              "value": "Grid 栅格",
+              "heading": "grid-栅格"
+            },
+            {
+              "depth": 4,
+              "value": "概述",
+              "heading": "概述"
+            },
+            {
+              "depth": 3,
+              "value": "基础用法",
+              "heading": "基础用法"
+            },
+            {
+              "depth": 3,
+              "value": "区块间隔",
+              "heading": "区块间隔"
+            },
+            {
+              "depth": 3,
+              "value": "左右偏移",
+              "heading": "左右偏移"
+            },
+            {
+              "depth": 3,
+              "value": "Flex 布局横向对齐",
+              "heading": "flex-布局横向对齐"
+            },
+            {
+              "depth": 3,
+              "value": "Flex 布局垂直对齐",
+              "heading": "flex-布局垂直对齐"
+            },
+            {
+              "depth": 3,
+              "value": "API",
+              "heading": "api"
+            },
+            {
+              "depth": 3,
+              "value": "Row",
+              "heading": "row"
+            },
+            {
+              "depth": 3,
+              "value": "Col",
+              "heading": "col"
+            }
+          ],
+          "title": "Grid 栅格",
+          "group": {
+            "path": "/grid",
+            "title": "Grid"
+          }
+        },
+        "title": "Grid 栅格"
+      },
+      {
         "path": "/icon",
         "component": require('/Users/liuzhao8/workspace/mypro/lui/src/Icon/index.md').default,
         "exact": true,
         "meta": {
           "filePath": "src/Icon/index.md",
-          "updatedTime": 1591769767000,
+          "updatedTime": 1591777567000,
           "slugs": [
             {
               "depth": 3,

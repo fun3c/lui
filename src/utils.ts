@@ -1,29 +1,44 @@
 const Event = {
   addEvent(obj, type, fn, data = {}) {
     if (obj.addEventListener) {
-      obj.addEventListener(type, (e) => fn(e, data), false);
+      obj.addEventListener(type, e => fn(e, data), false);
     } else if (obj.attachEvent) {
-      obj["e" + type + fn] = fn;
-      obj.attachEvent("on" + type,
-        function (e) {
-          obj["e" + type + fn](e, data);
-        });
+      obj['e' + type + fn] = fn;
+      obj.attachEvent('on' + type, function(e) {
+        obj['e' + type + fn](e, data);
+      });
     }
   },
   removeEvent(obj, type, fn) {
     if (obj.removeEventListener) {
       obj.removeEventListener(type, fn, false);
     } else if (obj.detachEvent) {
-      obj.detachEvent("on" + type, obj["e" + type + fn]);
-      obj["e" + type + fn] = null;
+      obj.detachEvent('on' + type, obj['e' + type + fn]);
+      obj['e' + type + fn] = null;
     }
-  }
+  },
 };
-const isTypes = (function () {
+const isTypes = (function() {
   const res = {};
-  const types = ['Function', 'String', 'Number', 'Array', 'Date', 'RegExp', 'Error', 'Symbol', 'Map', 'WeakMap', 'Set', 'WeakSet', 'Arguments', 'Undefined'];
+  const types = [
+    'Function',
+    'String',
+    'Number',
+    'Array',
+    'Date',
+    'RegExp',
+    'Error',
+    'Symbol',
+    'Map',
+    'WeakMap',
+    'Set',
+    'WeakSet',
+    'Arguments',
+    'Undefined',
+  ];
   types.forEach(name => {
-    return res[`is${name}`] = obj => toString.call(obj) === '[object ' + name + ']';
+    return (res[`is${name}`] = obj =>
+      toString.call(obj) === '[object ' + name + ']');
   });
   return res;
 })();
@@ -41,7 +56,7 @@ const utils = {
   getSize(el) {
     return { width: el.offsetWidth, height: el.offsetHeight };
   },
-  isWindow: function (obj) {
+  isWindow: function(obj) {
     return obj != null && obj === obj.window;
   },
   isDoc(el) {
@@ -59,12 +74,14 @@ const utils = {
     const win = this.getWindow(doc);
     const rect = el.getBoundingClientRect();
 
-    return doc.nodeType === 9 ? {
-      top: rect.top + win.pageYOffset - docElem.clientTop,
-      left: rect.left + win.pageXOffset - docElem.clientLeft,
-      width: rect.width,
-      height: rect.height
-    } : { top: 0, left: 0 };
+    return doc.nodeType === 9
+      ? {
+          top: rect.top + win.pageYOffset - docElem.clientTop,
+          left: rect.left + win.pageXOffset - docElem.clientLeft,
+          width: rect.width,
+          height: rect.height,
+        }
+      : { top: 0, left: 0 };
   },
   getScroll(el) {
     const isdom = this.isElem(el);
@@ -98,18 +115,21 @@ const utils = {
     return Array.from(context.getElementsByClassName(className));
   },
   $tag(tag, context) {
-    if (typeof context.getElementsByTagName !== "undefined") {
+    if (typeof context.getElementsByTagName !== 'undefined') {
       return Array.from(context.getElementsByTagName(tag));
       // DocumentFragment nodes don't have gEBTN
     } else {
       return Array.from(context.querySelectorAll(tag));
     }
   },
-  randomString: () => Math.random().toString(36).substring(7),
+  randomString: () =>
+    Math.random()
+      .toString(36)
+      .substring(7),
   castArray: (...args) => {
-    if(!args.length) return [];
+    if (!args.length) return [];
     const value = args[0];
-    return Array.isArray(value) ? value : [value]
-  }
+    return Array.isArray(value) ? value : [value];
+  },
 };
 export default utils;

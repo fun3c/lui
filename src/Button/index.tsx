@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import { ButtonProps } from './interface'
-import classnames from 'classnames'
+import { ButtonProps } from './interface';
+import classnames from 'classnames';
 import Icon from '../Icon';
-import utils from '@/utils'
-import './style/index.less'
+import utils from '@/utils';
+import './style/index.less';
 
-
-const prefixCls = 'lui-btn'
+const prefixCls = 'lui-btn';
 
 const Button = (props: ButtonProps) => {
-    const [isRepple, setRepple] = useState(false);
-    const [rippleStyle, setRippleStyle] = useState<object>({});
-    let timer: any
+  const [isRepple, setRepple] = useState(false);
+  const [rippleStyle, setRippleStyle] = useState<object>({});
+  let timer: any;
   const {
     children,
     className,
@@ -26,7 +25,7 @@ const Button = (props: ButtonProps) => {
     animate = false,
     htmlType = 'button',
     ...ohter
-  } = props
+  } = props;
   const appearance = type ? type : (!type || type === 'default') && '';
 
   const cls = classnames(
@@ -62,14 +61,14 @@ const Button = (props: ButtonProps) => {
     const x = Math.round(e.pageX - left - width / 2);
     const y = Math.round(e.pageY - top - height / 2);
     clearTimeout(timer);
-    setRepple(true)
-    setRippleStyle({ width, height, left: x, top: y })
-    timer = setTimeout(() => {setRepple(false)}, 400);
+    setRepple(true);
+    setRippleStyle({ width, height, left: x, top: y });
+    timer = setTimeout(() => {
+      setRepple(false);
+    }, 400);
   };
   const repple = () =>
-    isRepple && (
-      <span className={rippleCls} style={rippleStyle}></span>
-    );
+    isRepple && <span className={rippleCls} style={rippleStyle}></span>;
   const iconType = loading ? 'loading' : icon;
   const iconNode = iconType ? <Icon name={iconType} /> : null;
 
@@ -88,4 +87,4 @@ const Button = (props: ButtonProps) => {
   );
 };
 
-export default Button
+export default Button;

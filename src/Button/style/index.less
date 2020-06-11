@@ -3,163 +3,190 @@
 
 @btn-prefix: ~'lui-btn';
 .button-base() {
-    position    : relative;
-    display     : inline-block;
-    white-space : nowrap;
-    text-align  : center;
-    background  : none;
-    cursor      : pointer;
-    transition  : all 0.3s @ease-in-out;
-    user-select : none;
-    touch-action: manipulation;
-    outline     : none;
-    border      : 1px solid transparent;
-    text-shadow : @btn-text-shadow;
-    box-shadow  : @btn-shadow;
-    .button-variant-default(@gray-dark, @btn-default-background, @btn-default-border);
-    .button-size(@btn-szie-default__ptb, @btn-szie-default__plr, @default-font-size, @btn-szie-default, @border-radius-base);
+  position: relative;
+  display: inline-block;
+  white-space: nowrap;
+  text-align: center;
+  background: none;
+  cursor: pointer;
+  transition: all 0.3s @ease-in-out;
+  user-select: none;
+  touch-action: manipulation;
+  outline: none;
+  border: 1px solid transparent;
+  text-shadow: @btn-text-shadow;
+  box-shadow: @btn-shadow;
+  .button-variant-default(
+    @gray-dark,
+    @btn-default-background,
+    @btn-default-border
+  );
+  .button-size(
+    @btn-szie-default__ptb,
+    @btn-szie-default__plr,
+    @default-font-size,
+    @btn-szie-default,
+    @border-radius-base
+  );
 }
 
 .@{btn-prefix} {
-    .button-base();
-    >i,
-    >span {
-        display       : inline-block;
-        pointer-events: none;
+  .button-base();
+  > i,
+  > span {
+    display: inline-block;
+    pointer-events: none;
+  }
 
-    }
+  > i + span,
+  > span + i {
+    margin-left: 6px;
+  }
+  &__primary {
+    color: @btn-primary-background;
+  }
+  &__success {
+    color: @btn-success-background;
+  }
 
-    >i+span,
-    >span+i {
-        margin-left: 6px;
-    }
-    &__primary {
-        color: @btn-primary-background;
-    }
-    &__success {
-        color: @btn-success-background;
-    }
+  &__warning {
+    color: @btn-warning-background;
+  }
 
-    &__warning {
-        color: @btn-warning-background;
-    }
+  &__danger {
+    color: @btn-danger-background;
+  }
 
-    &__danger {
-        color: @btn-danger-background;
-    }
+  &-primary {
+    .button-variant(@white, @btn-primary-background, @btn-primary-border);
+  }
 
-    &-primary {
-        .button-variant(@white, @btn-primary-background, @btn-primary-border);
-    }
+  &-success {
+    .button-variant(@white, @btn-success-background, @btn-success-border);
+  }
 
-    &-success {
-        .button-variant(@white, @btn-success-background, @btn-success-border);
-    }
+  &-warning {
+    .button-variant(@white, @btn-warning-background, @btn-warning-border);
+  }
 
-    &-warning {
-        .button-variant(@white, @btn-warning-background, @btn-warning-border);
-    }
+  &-danger {
+    .button-variant(@white, @btn-danger-background, @btn-danger-border);
+  }
 
-    &-danger {
-        .button-variant(@white, @btn-danger-background, @btn-danger-border);
-    }
+  &-gray {
+    .button-variant(@btn-gray-color, @btn-gray-background, @btn-gray-border);
+  }
 
-    &-gray {
-        .button-variant(@btn-gray-color, @btn-gray-background, @btn-gray-border);
-    }
+  &-text {
+    .button-variant-text(@text-color, @btn-text-background, @btn-text-border);
+  }
 
-    &-text {
-        .button-variant-text(@text-color, @btn-text-background, @btn-text-border);
-    }
+  &-link {
+    .button-variant-text(@link-color, @btn-text-background, @btn-text-border);
+  }
 
-    &-link {
-        .button-variant-text(@link-color, @btn-text-background, @btn-text-border);
-    }
+  &-large {
+    .button-size(
+      @btn-szie-large__ptb,
+      @btn-szie-large__plr,
+      @default-font-lg,
+      @btn-szie-large,
+      @border-radius-base
+    );
+  }
+  &-medium {
+    .button-size(
+      @btn-szie-medium__ptb,
+      @btn-szie-medium__plr,
+      @default-font-md,
+      @btn-szie-medium,
+      @border-radius-base
+    );
+  }
+  &-small {
+    .button-size(
+      @btn-szie-small__ptb,
+      @btn-szie-small__plr,
+      @default-font-sm,
+      @btn-szie-small,
+      @border-radius-base
+    );
 
-    &-large {
-        .button-size(@btn-szie-large__ptb, @btn-szie-large__plr, @default-font-lg, @btn-szie-large, @border-radius-base);
+    .lui-icon-loading {
+      vertical-align: 0;
     }
-    &-medium {
-        .button-size(@btn-szie-medium__ptb, @btn-szie-medium__plr, @default-font-md, @btn-szie-medium, @border-radius-base);
+  }
+
+  &-circular {
+    .button-circular(@btn-prefix);
+    .animate {
+      left: -6px;
     }
-    &-small {
-        .button-size(@btn-szie-small__ptb, @btn-szie-small__plr, @default-font-sm, @btn-szie-small, @border-radius-base);
+  }
+  &-block {
+    width: 100%;
+    display: block;
+  }
+  &-anim {
+    overflow: hidden;
 
-        .lui-icon-loading {
-            vertical-align: 0;
-        }
-    }
-
-    &-circular {
-        .button-circular(@btn-prefix);
-        .animate {
-            left: -6px;
-        }
-    }
-    &-block {
-        width  : 100%;
-        display: block;
-    }
-    &-anim {
-        overflow: hidden;
-
-        .animate {
-            top           : 0;
-            left          : 0;
-            width         : 100%;
-            height        : 100%;
-            display       : block;
-            z-index       : 0;
-            overflow      : hidden;
-            position      : absolute;
-            border-radius : inherit;
-            pointer-events: none;
-        }
-
-        .ripple {
-            position         : absolute;
-            border-radius    : 100%;
-            background       : currentColor;
-            transform        : scale(0);
-            opacity          : 0.5;
-        }
-    }
-    
-    &-group {
-        .button-group(@btn-prefix);
-
-        &-vertical {
-            .button-vertical(@btn-prefix);
-        }
-
-        &-full {
-            .button-full(@btn-prefix);
-        }
+    .animate {
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+      z-index: 0;
+      overflow: hidden;
+      position: absolute;
+      border-radius: inherit;
+      pointer-events: none;
     }
 
-    .lui-icon-loading,
-    .lui-icon-reload {
-        vertical-align: 0.134px;
+    .ripple {
+      position: absolute;
+      border-radius: 100%;
+      background: currentColor;
+      transform: scale(0);
+      opacity: 0.5;
     }
+  }
+
+  &-group {
+    .button-group(@btn-prefix);
+
+    &-vertical {
+      .button-vertical(@btn-prefix);
+    }
+
+    &-full {
+      .button-full(@btn-prefix);
+    }
+  }
+
+  .lui-icon-loading,
+  .lui-icon-reload {
+    vertical-align: 0.134px;
+  }
 }
 
 .rippleEffect {
-    -webkit-animation: rippleDrop .5s ease-in-out 10ms infinite;
-    animation        : rippleDrop .5s ease-in-out 10ms infinite;
+  -webkit-animation: rippleDrop 0.5s ease-in-out 10ms infinite;
+  animation: rippleDrop 0.5s ease-in-out 10ms infinite;
 }
 
 @-webkit-keyframes rippleDrop {
-    100% {
-        -webkit-transform: scale(2);
-        transform        : scale(2);
-        opacity          : 0;
-    }
+  100% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    opacity: 0;
+  }
 }
 
 @keyframes rippleDrop {
-    100% {
-        -webkit-transform: scale(2);
-        transform        : scale(2);
-        opacity          : 0;
-    }
+  100% {
+    -webkit-transform: scale(2);
+    transform: scale(2);
+    opacity: 0;
+  }
 }
