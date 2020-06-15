@@ -1,0 +1,153 @@
+@import '../../styles/themes/default';
+@import './mixins';
+
+@comp-prefix: ~'@{root-prefix}-dropdown';
+
+.@{comp-prefix} {
+  font-size: @default-font-size;
+  position: relative;
+  width: fit-content;
+
+  &-center .@{comp-prefix}-menu {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .dropdown-position(@comp-prefix, left);
+  .dropdown-position(@comp-prefix, right);
+
+  &-menu {
+    position: absolute;
+    z-index: @dropdown-z-index;
+    margin: @dropdown-menu-margin;
+    cursor: pointer;
+  }
+
+  &-upwards {
+    bottom: 100%;
+    margin: @dropdown-menu-upwards-margin;
+  }
+
+  &-toggler,
+  &-toggler > * {
+    width: inherit;
+    height: inherit;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  &-item {
+    .items;
+
+    li {
+      .dropdown-item(@comp-prefix);
+    }
+
+    &-right li > * {
+      text-align: right;
+    }
+
+    &-left li > * {
+      text-align: left;
+    }
+
+    &-center li > * {
+      text-align: center;
+    }
+  }
+
+  li {
+    [direction='right'] {
+      position: relative;
+      padding-right: 0.6em;
+    }
+
+    [direction='left'] {
+      position: relative;
+      padding-left: 0.4em;
+    }
+  }
+
+  &-group {
+    .items;
+
+    > li {
+      position: relative;
+    }
+
+    &-title {
+      padding: @group-title-padding;
+      color: darken(@gray-lighter, 20%);
+      line-height: initial;
+    }
+
+    &-list {
+      &-item {
+        li {
+          .dropdown-item(@comp-prefix);
+
+          > *:not(.@{comp-prefix}-submenu) {
+            padding: @group-item-padding;
+          }
+        }
+      }
+    }
+
+    &-wrapper {
+      .items;
+
+      .@{comp-prefix}-group {
+        box-shadow: none;
+      }
+    }
+  }
+
+  &-link {
+    color: @link-color !important;
+  }
+
+  &-active {
+    color: @dropdown-item-hover-text;
+    background-color: @dropdown-item-hover-bg;
+  }
+
+  &-submenu {
+    position: absolute;
+    top: 0;
+
+    ul {
+      position: relative;
+      .items;
+    }
+
+    &-upwards {
+      top: auto;
+      bottom: 0;
+    }
+
+    &-left {
+      right: 105%;
+    }
+
+    &-right {
+      left: 105%;
+    }
+  }
+}
+
+.items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: @text-color;
+  background-color: @dropdown-items-color;
+  box-shadow: @dropdown-menu-box-shadow;
+  border-radius: @dropdown-menu-radius;
+}
+
+.dropdown-transition(left, 0 0);
+.dropdown-transition(right, 100% 0);
+.dropdown-transition(center, 50% 0);
+.dropdown-transition(up-left, 0 100%);
+.dropdown-transition(up-right, 100% 100%);
+.dropdown-transition(up-center, 50% 100%);

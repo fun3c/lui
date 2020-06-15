@@ -1,7 +1,7 @@
 const Event = {
-  addEvent(obj, type, fn, data = {}) {
+  addEvent(obj: any, type: string, fn: any, data = {}) {
     if (obj.addEventListener) {
-      obj.addEventListener(type, e => fn(e, data), false);
+      obj.addEventListener(type, (e: any) => fn(e, data), false);
     } else if (obj.attachEvent) {
       obj['e' + type + fn] = fn;
       obj.attachEvent('on' + type, function(e) {
@@ -9,7 +9,7 @@ const Event = {
       });
     }
   },
-  removeEvent(obj, type, fn) {
+  removeEvent(obj: any, type: string, fn: any) {
     if (obj.removeEventListener) {
       obj.removeEventListener(type, fn, false);
     } else if (obj.detachEvent) {
@@ -19,7 +19,7 @@ const Event = {
   },
 };
 const isTypes = (function() {
-  const res = {};
+  const res: any = {};
   const types = [
     'Function',
     'String',
@@ -36,8 +36,8 @@ const isTypes = (function() {
     'Arguments',
     'Undefined',
   ];
-  types.forEach(name => {
-    return (res[`is${name}`] = obj =>
+  types.forEach((name: string) => {
+    return (res[`is${name}`] = (obj: any): any =>
       toString.call(obj) === '[object ' + name + ']');
   });
   return res;
@@ -45,7 +45,7 @@ const isTypes = (function() {
 
 const utils = {
   ...Event,
-  getOfsset(el) {
+  getOfsset(el: any) {
     const result = { x: 0, y: 0 };
     while ((el = el.offsetParent)) {
       result.x += el.offsetLeft;
@@ -53,22 +53,22 @@ const utils = {
     }
     return result;
   },
-  getSize(el) {
+  getSize(el: HTMLCanvasElement) {
     return { width: el.offsetWidth, height: el.offsetHeight };
   },
-  isWindow: function(obj) {
+  isWindow: function(obj: any) {
     return obj != null && obj === obj.window;
   },
-  isDoc(el) {
+  isDoc(el: Document) {
     return el.nodeType === 9 && el.defaultView;
   },
-  isElem(el) {
+  isElem(el: Element) {
     return el.nodeType === 1;
   },
-  getWindow(el) {
+  getWindow(el: any) {
     return this.isWindow(el) ? el : this.isDoc(el);
   },
-  getClinetRect(el) {
+  getClinetRect(el: any) {
     const doc = el && el.ownerDocument;
     const docElem = doc.documentElement;
     const win = this.getWindow(doc);
@@ -83,7 +83,7 @@ const utils = {
         }
       : { top: 0, left: 0 };
   },
-  getScroll(el) {
+  getScroll(el: any) {
     const isdom = this.isElem(el);
     const iswin = this.isWindow(el);
     const isdoc = this.isDoc(el);
@@ -102,7 +102,7 @@ const utils = {
 
     return offset;
   },
-  isHtmlControl(el) {
+  isHtmlControl(el: any) {
     try {
       document.body.appendChild(el.cloneNode(true));
       return this.isElem(el) ? true : false;
@@ -111,10 +111,10 @@ const utils = {
     }
   },
   ...isTypes,
-  $cls(className, context) {
+  $cls(className: string, context: Element) {
     return Array.from(context.getElementsByClassName(className));
   },
-  $tag(tag, context) {
+  $tag(tag: string, context: Element) {
     if (typeof context.getElementsByTagName !== 'undefined') {
       return Array.from(context.getElementsByTagName(tag));
       // DocumentFragment nodes don't have gEBTN
@@ -126,7 +126,7 @@ const utils = {
     Math.random()
       .toString(36)
       .substring(7),
-  castArray: (...args) => {
+  castArray: (...args: any[]) => {
     if (!args.length) return [];
     const value = args[0];
     return Array.isArray(value) ? value : [value];

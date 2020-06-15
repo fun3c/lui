@@ -6,7 +6,7 @@ const routes = [
   {
     "path": "/",
     "component": (props) => require('react').createElement(require('/Users/liuzhao8/workspace/mypro/lui/node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
-      ...{"menus":{"*":{"*":[{"path":"/","title":"组件","meta":{}},{"title":"Button","path":"/button","meta":{},"children":[{"path":"/button","title":"Button 按钮","meta":{}}]},{"title":"Grid","path":"/grid","meta":{},"children":[{"path":"/grid","title":"Grid 栅格","meta":{}}]},{"title":"Icon","path":"/icon","meta":{},"children":[{"path":"/icon","title":"Icon 图标","meta":{}}]}]}},"locales":[],"navs":{},"title":"LUI","mode":"doc"},
+      ...{"menus":{"*":{"*":[{"path":"/","title":"组件","meta":{}},{"title":"Button","path":"/button","meta":{},"children":[{"path":"/button","title":"Button 按钮","meta":{}}]},{"title":"Dropdown","path":"/dropdown","meta":{},"children":[{"path":"/dropdown","title":"Dropdown下拉菜单","meta":{}}]},{"title":"Grid","path":"/grid","meta":{},"children":[{"path":"/grid","title":"Grid 栅格","meta":{}}]},{"title":"Icon","path":"/icon","meta":{},"children":[{"path":"/icon","title":"Icon 图标","meta":{}}]}]}},"locales":[],"navs":{},"title":"LUI","mode":"doc"},
       ...props,
     }),
     "routes": [
@@ -28,7 +28,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/Button/index.md",
-          "updatedTime": 1591777567000,
+          "updatedTime": 1591863621000,
           "slugs": [
             {
               "depth": 3,
@@ -95,12 +95,49 @@ const routes = [
         "title": "Button 按钮"
       },
       {
+        "path": "/dropdown",
+        "component": require('/Users/liuzhao8/workspace/mypro/lui/src/Dropdown/index.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "src/Dropdown/index.md",
+          "updatedTime": 1592214757099,
+          "slugs": [
+            {
+              "depth": 3,
+              "value": "Dropdown下拉菜单",
+              "heading": "dropdown下拉菜单"
+            },
+            {
+              "depth": 3,
+              "value": "何时使用",
+              "heading": "何时使用"
+            },
+            {
+              "depth": 3,
+              "value": "基础用法",
+              "heading": "基础用法"
+            },
+            {
+              "depth": 3,
+              "value": "弹出位置",
+              "heading": "弹出位置"
+            }
+          ],
+          "title": "Dropdown下拉菜单",
+          "group": {
+            "path": "/dropdown",
+            "title": "Dropdown"
+          }
+        },
+        "title": "Dropdown下拉菜单"
+      },
+      {
         "path": "/grid",
         "component": require('/Users/liuzhao8/workspace/mypro/lui/src/Grid/index.md').default,
         "exact": true,
         "meta": {
           "filePath": "src/Grid/index.md",
-          "updatedTime": 1591863593644,
+          "updatedTime": 1591863621000,
           "slugs": [
             {
               "depth": 3,
@@ -167,7 +204,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/Icon/index.md",
-          "updatedTime": 1591777567000,
+          "updatedTime": 1591863621000,
           "slugs": [
             {
               "depth": 3,
@@ -214,7 +251,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "docs/index.md",
-          "updatedTime": 1591699713000,
+          "updatedTime": 1591863621000,
           "slugs": [
             {
               "depth": 2,
