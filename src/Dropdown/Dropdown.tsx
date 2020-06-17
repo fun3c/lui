@@ -12,6 +12,7 @@ import classnames from 'classnames';
 import { CSSTransition } from 'react-transition-group';
 import Menu from './Menu';
 import MenuItem from './MenuItem';
+import SubDropdown from './SubMenu';
 import utils from '@/utils';
 import './styles/index.less';
 
@@ -59,8 +60,10 @@ function Dropdown (props: DropdownPropsType) {
   );
 
   const close = useCallback((): void => {
-    timer.stamp = window.setTimeout(() => setShow(false), timer.timeOut);
-  }, [timer]);
+    timer.stamp = window.setTimeout(function(){
+        setShow(false);
+    }, timer.timeOut);
+  }, [timer, setShow]);
 
   const handleClickHide = useCallback(
     e => {
@@ -165,6 +168,7 @@ function Dropdown (props: DropdownPropsType) {
         isClick,
         isHover,
         callback,
+        setShow,
       }}
     >
       <div className={cls}>
@@ -177,5 +181,6 @@ function Dropdown (props: DropdownPropsType) {
 
 Dropdown.Menu = Menu;
 Dropdown.MenuItem = MenuItem;
+Dropdown.SubMenu = SubDropdown;
 
 export default Dropdown;

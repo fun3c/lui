@@ -12,5 +12,6 @@ export interface ButtonProps extends React.Props<ButtonProps> {
   animate?: boolean;
   htmlType?: 'button' | 'submit' | 'reset';
   onClick?: (e: React.MouseEvent<HTMLButtonElement> & MouseEvent) => void;
+  ref?: any,
   [propName: string]: any;
 }

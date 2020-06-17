@@ -2,7 +2,7 @@ export interface DropdownPropsType {
   className?: string;
   overlay: () => void | React.ReactNode;
   trigger?: string;
-  callback?: () => void;
+  callback?: (e: any) => void;
   toggle: () => void | React.ReactNode;
   placement?: 'left' | 'center' | 'right';
   align?: 'left' | 'center' | 'right';
@@ -17,7 +17,7 @@ export interface ContetProps extends DropdownPropsType {
   close?: any;
   isClick?: boolean;
   isHover?: boolean;
-  callback?: any;
+  callback?: (e: Event) => void;
 }
 
 export type DropdownMenuProps = {
@@ -34,5 +34,17 @@ export type DropdownMenuItemProps = {
   divider?: boolean;
   disabled?: boolean;
   name?: string;
+  [propName: string]: any;
+};
+
+export interface SubDropdownPropsType {
+  className?: string;
+  children: React.ReactNode;
+  trigger?: string | undefined;
+  disabled?: boolean;
+  toggle?: () => void | React.ReactNode;
+  direction?: string;
+ 
+  role?: string;
   [propName: string]: any;
 };

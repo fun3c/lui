@@ -37,17 +37,17 @@ const DropdownMenuItem: React.FunctionComponent<DropdownMenuItemProps> = (props:
     ...other,
     onClick: function (event: any) {
       const item: any = ReactDOM.findDOMNode(liEl.current);
-      const current = {
+      const current: any = {
         event,
         e: event,
         name: props.name,
         item: item.innerText,
       };
-      utils.isFunction(context.callback) &&
-        context.callback.call(this, current);
+      context.setShow(false);
+      context.callback && utils.isFunction(context.callback) &&
+        context.callback(current);
       utils.isFunction(props.onClick) &&
         props.onClick.apply(this, [event, ...arguments]);
-      context.close.call(this);
       event.stopPropagation();
     },
   };

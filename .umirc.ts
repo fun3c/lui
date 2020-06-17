@@ -4,10 +4,13 @@ export default defineConfig({
   title: 'LUI',
   styles: [
     `
-    ul,ol {list-style: none},
     .__dumi-default-previewer-demo > * {
+        display: block-inline;
         margin: 10px;
     }
+    `,
+    `
+      ul {list-style: none;}
     `,
   ],
   // more config: https://d.umijs.org/config

@@ -18,7 +18,7 @@ const DropdownMenu:React.FunctionComponent<DropdownMenuProps> = (props:DropdownM
         onClick: function(e: Event) {
           const onclick = props.onClick;
           onclick && onclick.apply(this, [e, ...arguments]);
-          context.close.call(this);
+          context.close();
           e.stopPropagation();
         },
       };
@@ -26,7 +26,7 @@ const DropdownMenu:React.FunctionComponent<DropdownMenuProps> = (props:DropdownM
         ? { ...hanleHover }
         : context.isClick
         ? { ...hanleClick }
-        : null;
+        : () => {};
       return { ...other, ...handle };
     };
 

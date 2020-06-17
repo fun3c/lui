@@ -43,7 +43,7 @@ const Button = (props: ButtonProps) => {
   );
   const rippleCls = classnames('ripple', { rippleEffect: isRepple });
 
-  const handleClick = (e: React.MouseEvent<Element, MouseEvent>) => {
+  const handleClick = (e: any) => {
     const { onClick, loading } = props;
     e.target && rippleAnim(e);
     if (typeof loading !== 'boolean') return;
@@ -63,9 +63,7 @@ const Button = (props: ButtonProps) => {
     clearTimeout(timer);
     setRepple(true);
     setRippleStyle({ width, height, left: x, top: y });
-    timer = setTimeout(() => {
-      setRepple(false);
-    }, 400);
+    timer = setTimeout(() => setRepple(false), 400);
   };
   const repple = () =>
     isRepple && <span className={rippleCls} style={rippleStyle}></span>;
@@ -81,7 +79,7 @@ const Button = (props: ButtonProps) => {
       {...ohter}
     >
       {iconNode}
-      {children && <span>{children}</span>}
+      {children &&  utils.isString(children) ? <span>{children}</span> : children}
       {animate && <span className="animate">{repple()}</span>}
     </button>
   );
