@@ -1,0 +1,26 @@
+.menu-transition(@dir, @origin) {
+    .fade {
+        &-@{dir}-enter {
+            opacity         : 0;
+            transform       : scale(0);
+            transform-origin: @origin;
+            transition      : opacity 0.1s, transform @dropdown-transition-time @dropdown-transition-in;
+
+            &-active {
+                opacity  : 1;
+                transform: scale(1);
+            }
+        }
+
+        &-@{dir}-exit {
+            opacity         : 1;
+            transform       : scale(1);
+            transform-origin: @origin;
+            transition      : opacity 0.1s, transform @dropdown-transition-time @dropdown-transition-out;
+
+            &-active {
+                transform: scale(0);
+            }
+        }
+    }
+}

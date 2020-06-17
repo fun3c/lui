@@ -4,3 +4,4 @@ export { default as ButtonGroup } from './ButtonGroup';
 export { default as Grid } from './Grid';
 export { default as Dropdown } from './Dropdown';
 export { default as Breadcrumb } from './Breadcrumb';
+export { default as Menu } from './Menu';

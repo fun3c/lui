@@ -6,7 +6,7 @@ const routes = [
   {
     "path": "/",
     "component": (props) => require('react').createElement(require('/Users/liuzhao8/workspace/mypro/lui/node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
-      ...{"menus":{"*":{"*":[{"path":"/","title":"组件","meta":{}},{"title":"Breadcrumb","path":"/breadcrumb","meta":{},"children":[{"path":"/breadcrumb","title":"Breadcrumb 面包屑","meta":{}}]},{"title":"Button","path":"/button","meta":{},"children":[{"path":"/button","title":"Button 按钮","meta":{}}]},{"title":"Dropdown","path":"/dropdown","meta":{},"children":[{"path":"/dropdown","title":"Dropdown下拉菜单","meta":{}}]},{"title":"Grid","path":"/grid","meta":{},"children":[{"path":"/grid","title":"Grid 栅格","meta":{}}]},{"title":"Icon","path":"/icon","meta":{},"children":[{"path":"/icon","title":"Icon 图标","meta":{}}]}]}},"locales":[],"navs":{},"title":"LUI","mode":"doc"},
+      ...{"menus":{"*":{"*":[{"path":"/","title":"组件","meta":{}},{"title":"Breadcrumb","path":"/breadcrumb","meta":{},"children":[{"path":"/breadcrumb","title":"Breadcrumb 面包屑","meta":{}}]},{"title":"Button","path":"/button","meta":{},"children":[{"path":"/button","title":"Button 按钮","meta":{}}]},{"title":"Dropdown","path":"/dropdown","meta":{},"children":[{"path":"/dropdown","title":"Dropdown下拉菜单","meta":{}}]},{"title":"Grid","path":"/grid","meta":{},"children":[{"path":"/grid","title":"Grid 栅格","meta":{}}]},{"title":"Icon","path":"/icon","meta":{},"children":[{"path":"/icon","title":"Icon 图标","meta":{}}]},{"title":"Menu","path":"/menu","meta":{},"children":[{"path":"/menu","title":"Menu导航菜单","meta":{}}]}]}},"locales":[],"navs":{},"title":"LUI","mode":"doc"},
       ...props,
     }),
     "routes": [
@@ -28,7 +28,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/Breadcrumb/index.md",
-          "updatedTime": 1592376327000,
+          "updatedTime": 1592376695000,
           "slugs": [
             {
               "depth": 3,
@@ -336,6 +336,43 @@ const routes = [
           }
         },
         "title": "Icon 图标"
+      },
+      {
+        "path": "/menu",
+        "component": require('/Users/liuzhao8/workspace/mypro/lui/src/Menu/index.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "src/Menu/index.md",
+          "updatedTime": 1592379176443,
+          "slugs": [
+            {
+              "depth": 3,
+              "value": "Menu导航菜单",
+              "heading": "menu导航菜单"
+            },
+            {
+              "depth": 3,
+              "value": "何时使用",
+              "heading": "何时使用"
+            },
+            {
+              "depth": 3,
+              "value": "横向菜单",
+              "heading": "横向菜单"
+            },
+            {
+              "depth": 3,
+              "value": "垂直菜单",
+              "heading": "垂直菜单"
+            }
+          ],
+          "title": "Menu导航菜单",
+          "group": {
+            "path": "/menu",
+            "title": "Menu"
+          }
+        },
+        "title": "Menu导航菜单"
       },
       {
         "path": "/",
