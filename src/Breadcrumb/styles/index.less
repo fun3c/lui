@@ -1,0 +1,48 @@
+@import '../../styles/themes/default';
+
+@breadcrumb-prefix: ~'lui-breadcrumb';
+
+@defaultColor: rgba(0,0,0,0.45);
+@activeColor: rgba(0,0,0,0.85);
+
+.@{breadcrumb-prefix} {
+  list-style: none;
+  &-text {
+    color: @defaultColor;
+    .lui-icon {
+      vertical-align: -0.1006em;
+    }
+  }
+  &-separator {
+    margin: 0 8px;
+    color: @defaultColor;
+  }
+  > li {
+    display: inline-block;
+    font-size: @default-font-size;
+    color: @text-color;
+    a {
+      color: @defaultColor;
+      &:hover {
+        color: @link-color;
+      }
+    }
+    &:last-child {
+      >span {
+        &:first-child {
+          color: @activeColor;
+          a {
+            color: @activeColor;
+            &:hover {
+              color: @link-color;
+            }
+          }
+        }
+        &:last-child {
+          display: none;
+        }
+      }
+    }
+  }
+  
+}

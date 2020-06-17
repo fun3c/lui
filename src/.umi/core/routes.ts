@@ -6,7 +6,7 @@ const routes = [
   {
     "path": "/",
     "component": (props) => require('react').createElement(require('/Users/liuzhao8/workspace/mypro/lui/node_modules/@umijs/preset-dumi/lib/themes/default/layout.js').default, {
-      ...{"menus":{"*":{"*":[{"path":"/","title":"组件","meta":{}},{"title":"Button","path":"/button","meta":{},"children":[{"path":"/button","title":"Button 按钮","meta":{}}]},{"title":"Dropdown","path":"/dropdown","meta":{},"children":[{"path":"/dropdown","title":"Dropdown下拉菜单","meta":{}}]},{"title":"Grid","path":"/grid","meta":{},"children":[{"path":"/grid","title":"Grid 栅格","meta":{}}]},{"title":"Icon","path":"/icon","meta":{},"children":[{"path":"/icon","title":"Icon 图标","meta":{}}]}]}},"locales":[],"navs":{},"title":"LUI","mode":"doc"},
+      ...{"menus":{"*":{"*":[{"path":"/","title":"组件","meta":{}},{"title":"Breadcrumb","path":"/breadcrumb","meta":{},"children":[{"path":"/breadcrumb","title":"Breadcrumb 面包屑","meta":{}}]},{"title":"Button","path":"/button","meta":{},"children":[{"path":"/button","title":"Button 按钮","meta":{}}]},{"title":"Dropdown","path":"/dropdown","meta":{},"children":[{"path":"/dropdown","title":"Dropdown下拉菜单","meta":{}}]},{"title":"Grid","path":"/grid","meta":{},"children":[{"path":"/grid","title":"Grid 栅格","meta":{}}]},{"title":"Icon","path":"/icon","meta":{},"children":[{"path":"/icon","title":"Icon 图标","meta":{}}]}]}},"locales":[],"navs":{},"title":"LUI","mode":"doc"},
       ...props,
     }),
     "routes": [
@@ -21,6 +21,48 @@ const routes = [
           "title": "Index"
         },
         "title": "Index"
+      },
+      {
+        "path": "/breadcrumb",
+        "component": require('/Users/liuzhao8/workspace/mypro/lui/src/Breadcrumb/index.md').default,
+        "exact": true,
+        "meta": {
+          "filePath": "src/Breadcrumb/index.md",
+          "updatedTime": 1592376262625,
+          "slugs": [
+            {
+              "depth": 3,
+              "value": "Breadcrumb 面包屑",
+              "heading": "breadcrumb-面包屑"
+            },
+            {
+              "depth": 3,
+              "value": "何时使用",
+              "heading": "何时使用"
+            },
+            {
+              "depth": 3,
+              "value": "基础用法",
+              "heading": "基础用法"
+            },
+            {
+              "depth": 3,
+              "value": "自定义分隔符",
+              "heading": "自定义分隔符"
+            },
+            {
+              "depth": 3,
+              "value": "图标",
+              "heading": "图标"
+            }
+          ],
+          "title": "Breadcrumb 面包屑",
+          "group": {
+            "path": "/breadcrumb",
+            "title": "Breadcrumb"
+          }
+        },
+        "title": "Breadcrumb 面包屑"
       },
       {
         "path": "/button",
@@ -100,7 +142,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/Dropdown/index.md",
-          "updatedTime": 1592215016000,
+          "updatedTime": 1592374112000,
           "slugs": [
             {
               "depth": 3,
