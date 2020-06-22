@@ -343,7 +343,7 @@ const routes = [
         "exact": true,
         "meta": {
           "filePath": "src/Menu/index.md",
-          "updatedTime": 1592379176443,
+          "updatedTime": 1592379723000,
           "slugs": [
             {
               "depth": 3,

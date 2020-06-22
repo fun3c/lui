@@ -3,7 +3,7 @@ export default {
     toggle: (toggled: any, duration = 300) => ({
         animation: { 
                 rotateX: toggled ? 0 : 180, 
-                opacity: [1, 0]
+                opacity: [1, 0.6]
             },
         duration: duration,
     }),

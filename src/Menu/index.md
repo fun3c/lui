@@ -11,82 +11,7 @@
 
 水平顶部导航菜单。
 
-```tsx
-import React from 'react';
-import { Menu, Dropdown, Icon } from 'lui';
-class App extends React.Component {
-    constructor(props) {
-    super(props)
-    this.state = {
-      active: 'frist_1',
-      menutree: [
-          {
-              name: '菜单 1',
-              children: [
-                {
-                  name: 'submenu 1',
-                  active: true,
-                },
-                {
-                  name: 'submenu 2',
-                },
-                {
-                  name: 'submenu 3',
-                  children: [
-                    {
-                      name: 'submenu3 1',
-                    },
-                    {
-                      name: 'submenu3 2',
-                    },
-                    {
-                      name: 'submenu3 3',
-                    },
-                  ]
-                }
-              ]
-          },
-          {
-              name: () => <a href="http://www.jd.com/" target="_blank">菜单 2</a>,
-          },
-          { 
-              name: '菜单 3',
-              children: [
-                {
-                  name: '菜单 3 - 1'
-                },
-                {
-                  name: '菜单 2 - 1'
-                }
-              ]
-          },
-          {
-              name: '菜单 4',
-          },
-          {
-              name: '菜单 5',
-          }
-      ]
-    }
-  }
 
-  onSelect ({node, data}) {
-    // console.log(node)
-  }
-
-  render() {
-      return <div className="demo">
-        <Menu 
-          data={this.state.menutree}
-          onSelect={this.onSelect.bind(this)}
-          >
-        </Menu>
-    </div>
-  }
-}
-
-export default App;
-```
 
 ### 垂直菜单
 
@@ -117,7 +42,6 @@ class App extends React.Component {
                   children: [
                     {
                       name: 'submenu3 1',
-                      
                     },
                     {
                       name: 'submenu3 2',

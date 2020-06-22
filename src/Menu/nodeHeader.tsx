@@ -27,7 +27,6 @@ const NodeHeader = (props: { node: any; mode: any; onSelect: any; datasource: an
         }
     };
 
-    
     const arrow = () => ishc ? 'right' : 'down';
     return (
         <div {...headProps}>

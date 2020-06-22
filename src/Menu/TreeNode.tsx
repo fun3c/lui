@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import utils from '../utils';
 import NodeHeader from './nodeHeader';
 import { VelocityTransitionGroup } from 'velocity-react';
@@ -35,6 +35,12 @@ const TreeNode = (props: { node: any; mode: string; onSelect: any; datasource: a
         timer.stamp = window.setTimeout(() => update(0), timer.delay);
     }
 
+    useEffect(() => {
+        return () => {
+            window.clearTimeout(timer.stamp);
+        }
+    }, []);
+
     const onHover = {
         onMouseOver: () => open(),
         onMouseLeave: () => close(),
@@ -55,6 +61,7 @@ const TreeNode = (props: { node: any; mode: string; onSelect: any; datasource: a
         if (!utils.isArray(children)) {
             children = children ? [children] : [];
         }
+        
         return (
             children.length ?
                 <ul className={submenuList}>
@@ -65,24 +72,26 @@ const TreeNode = (props: { node: any; mode: string; onSelect: any; datasource: a
     };
 
     return (
-        <li className={itemCls} {...onHandle}>
-            <NodeHeader
-                mode={mode}
-                node={node}
-                onSelect={onSelect}
-                classNames={classNames}
-                datasource={datasource}
-                terminal={terminal}
-                animations={animations}
-            />
-            <VelocityTransitionGroup
-                {...animations.drawer({ ishc })}
-                className={submenu}
-            >
-                {node.opened && renderChildren(node)}
-            </VelocityTransitionGroup>
-        </li>
-    )
+      <li className={itemCls} {...onHandle}>
+        <NodeHeader
+          mode={mode}
+          node={node}
+          onSelect={onSelect}
+          classNames={classNames}
+          datasource={datasource}
+          terminal={terminal}
+          animations={animations}
+        />
+        {node.children ? (
+          <VelocityTransitionGroup
+            {...animations.drawer({ ishc })}
+            className={submenu}
+          >
+            {node.opened && renderChildren(node)}
+          </VelocityTransitionGroup>
+        ) : null}
+      </li>
+    );
 }
 
 export default TreeNode;
